@@ -1,6 +1,7 @@
 import cv2
 import time
 import picamera
+import picamera.array
 import threading
 import matplotlib.pyplot as plt
 
@@ -11,13 +12,11 @@ streamRate=0.1
 def refreshPic():
     while True:
         with picamera.PiCamera() as camera:
+            with picamera.array.PiRGBArray(camera) as stream:
             camera.resolution=(1080,860)
-            time.sleep(2)
             while True:
-                time.sleep(streamRate)
-                camera.capture(streamPath)
-                time.sleep(2)
-                images=cv2.imread(streamPath)
+                camera.capture(stream,'bgr',use_video_port=True)
+                images = cv2.cvtColor(stream.array, cv2.COLOR_BGR2GRAY)
                 tmpimage=cv2.imread("./tmpl.jpg")
                 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
                 for m in methods:
