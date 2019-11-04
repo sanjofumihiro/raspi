@@ -17,9 +17,6 @@ def refreshPic():
                 camera.capture(streamPath)
                 time.sleep(streamRate)
 thread_pic=threading.Thread(target=refreshPic)
-thread_pic.start()
-def ballPosition():
-    image=cv2.imread(streamPath)
-    cv2.imshow("image",image)
-time.sleep(5)
-ballPosition()
+#thread_pic.start()
+image=cv2.imread(streamPath)
+cv2.imshow("image",image)
