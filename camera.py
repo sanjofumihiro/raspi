@@ -17,5 +17,6 @@ def refreshPic():
                 time.sleep(streamRate)
                 camera.capture(streamPath)
                 image=cv2.imread(streamPath)
-                cv2.imshow("image",image)
+                plt.imshow(image)
+                plt.pause(.01)
 refreshPic()
