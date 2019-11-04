@@ -19,4 +19,4 @@ def refreshPic():
 thread_pic=threading.Thread(target=refreshPic)
 #thread_pic.start()
 image=cv2.imread(streamPath)
-cv2.imshow("image",image)
+#cv2.imshow("image",image)
