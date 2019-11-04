@@ -16,17 +16,14 @@ def refreshPic():
                 camera.resolution=(1080,860)
                 while True:
                     camera.capture(stream,'bgr',use_video_port=True)
-                    images = cv2.cvtColor(stream.array, cv2.COLOR_BGR2GRAY)
-                    tmpimage=cv2.imread("./tmpl.jpg")
-                    methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']  
-                    for m in methods:
-                        copy=images.copy()
-                        res=cv2.matchTemplate(copy,tmpimage,cv2.TM_CCOEFF)
-                        min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
-                        println("=============".m)
-                        println(min_val)
-                        println(max_val)
-                        println(min_loc)
-                        println(max_loc)
+                    img = cv2.cvtColor(stream.array,cv2.COLOR_BGR2GRAY)
+                    tmp=cv2.imread("./tmpl.jpg",0)
+                    res=cv2.matchTemplate(img,tmp,cv2.TM_CCOEFF)
+                    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+                    println("=============".m)
+                    println(min_val)
+                    println(max_val)
+                    println(min_loc)
+                    println(max_loc)
                     
 refreshPic()
