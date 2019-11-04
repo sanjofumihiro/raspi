@@ -2,6 +2,7 @@ import cv2
 import time
 import picamera
 import threading
+import matplotlib.pyplot as plt
 
 streamPath="./c.jpg"
 streamgetPath="./c.jpg"
@@ -18,5 +19,7 @@ def refreshPic():
                 time.sleep(streamRate)
 thread_pic=threading.Thread(target=refreshPic)
 #thread_pic.start()
-image=cv2.imread("c.jpg")
-#cv2.imshow("image",image)
+imgBGR = cv2.imread("c.jpg", cv2.IMREAD_COLOR)
+imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
+plt.imshow(imgRGB)
+plt.show()
