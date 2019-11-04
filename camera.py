@@ -17,7 +17,6 @@ def refreshPic():
                 time.sleep(streamRate)
                 camera.capture(streamPath)
                 images=cv2.imread(streamPath)
-                image_r=cv2.resize(image,dsize=(20, 20))
                 tmpimage=cv2.imread("./tmpl.jpg")
                 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
                 for m in methods:
