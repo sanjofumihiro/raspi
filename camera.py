@@ -3,7 +3,8 @@ import time
 import picamera
 import threading
 
-global streamPath="./c.jpg"
+global streamPath
+streamPath="./c.jpg"
 streamRate=0.1
 
 def refreshPic():
