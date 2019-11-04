@@ -3,7 +3,6 @@ import time
 import picamera
 import threading
 
-global streamPath
 streamPath="./c.jpg"
 streamRate=0.1
 
