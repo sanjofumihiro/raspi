@@ -16,8 +16,19 @@ def refreshPic():
             while True:
                 time.sleep(streamRate)
                 camera.capture(streamPath)
-                image=cv2.imread(streamPath)
-                image_r=cv2.resize(image,dsize=(20, 20)
-                plt.imshow(image)
-                plt.pause(.01)
+                images=cv2.imread(streamPath)
+                image_r=cv2.resize(image,dsize=(20, 20))
+                tmpimage=cv2.imread("./tmpl.jpg")
+                methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+                for m in methods:
+                    copy=image.copy()
+                    method=eval(m)
+                    res=cv2.matchTemplate(copy,tmpimage,method)
+                    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+                    println("=============".m)
+                    println(min_val)
+                    println(max_val)
+                    println(min_loc)
+                    println(max_loc)
+                    
 refreshPic()
