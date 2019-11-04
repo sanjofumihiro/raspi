@@ -12,7 +12,6 @@ def refreshPic():
     while True:
         with picamera.PiCamera() as camera:
             camera.resolution=(1080,860)
-            camera.start_preview()
             time.sleep(2)
             while True:
                 time.sleep(streamRate)
