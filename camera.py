@@ -15,8 +15,8 @@ def refreshPic():
             camera.start_preview()
             time.sleep(2)
             while True:
-                camera.capture(streamPath)
                 time.sleep(streamRate)
+                camera.capture(streamPath)
 thread_pic=threading.Thread(target=refreshPic)
 #thread_pic.start()
 imgBGR = cv2.imread("c.jpg", cv2.IMREAD_COLOR)
