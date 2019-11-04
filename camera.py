@@ -14,7 +14,7 @@ def refreshPic():
             camera.start_preview()
             time.sleep(2)
             while True:
-                camera.capture(streamRate)
+                camera.capture(streamPath)
                 time.sleep(streamRate)
 thread_pic=threading.Thread(target=refreshPic)
 thread_pic.start()
