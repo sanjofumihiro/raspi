@@ -19,6 +19,6 @@ thread_pic=threading.Thread(target=refreshPic)
 thread_pic.start()
 
 def ballPosition():
-    image=cv2.imread(streamPath)
+    ret,image=cv2.imread(streamPath)
     cv2.imshow(image)
 ballPosition()
