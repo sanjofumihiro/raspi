@@ -17,7 +17,13 @@ def refreshPic():
                 time.sleep(streamRate)
                 camera.capture(streamPath)
                 image=cv2.imread(streamPath)
+<<<<<<< HEAD
                 image_r=cv2.resize(image,dsize=(20, 20)
                 plt.imshow(image)
                 plt.pause(.01)
 refreshPic()
+=======
+                image_r=cv2.resize(image,dsize=(50, 50))
+                cv2.imwrite("./c.jpg",image_r)
+refreshPic()
+>>>>>>> refs/remotes/origin/master
