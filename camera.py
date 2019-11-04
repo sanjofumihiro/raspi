@@ -21,8 +21,7 @@ def refreshPic():
                 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
                 for m in methods:
                     copy=images.copy()
-                    method=eval(m)
-                    res=cv2.matchTemplate(copy,tmpimage,method)
+                    res=cv2.matchTemplate(copy,tmpimage,cv2.TM_CCOEFF)
                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
                     println("=============".m)
                     println(min_val)
