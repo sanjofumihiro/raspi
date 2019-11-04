@@ -17,7 +17,7 @@ def refreshPic():
             while True:
                 time.sleep(streamRate)
                 camera.capture(streamPath)
+                image=cv2.imread(streamPath)
+                cv2.imshow("image",image)
 thread_pic=threading.Thread(target=refreshPic)
 thread_pic.start()
-image=cv2.imread(streamPath)
-cv2.imshow("image",image)
