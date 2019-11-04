@@ -21,7 +21,7 @@ def refreshPic():
                     tmp=cv2.resize(tmp,dsize=(100,100))
                     res=cv2.matchTemplate(img,tmp,cv2.TM_CCOEFF)
                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
-                    output="min      "+min_val+"      "+min_loc+"max    "+max_val+"      "+max_loc
+                    output="min      "+str(min_val)+"      "+str(min_loc)+"max    "+str(max_val)+"      "+str(max_loc)
                     print("=============")
                     print(min_val)
                     print(max_val)
