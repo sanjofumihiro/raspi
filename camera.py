@@ -16,6 +16,7 @@ def refreshPic():
             while True:
                 time.sleep(streamRate)
                 camera.capture(streamPath)
+                time.sleep(2)
                 images=cv2.imread(streamPath)
                 tmpimage=cv2.imread("./tmpl.jpg")
                 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR','cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
