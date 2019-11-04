@@ -18,6 +18,7 @@ def refreshPic():
                     camera.capture(stream,'bgr',use_video_port=True)
                     img = cv2.cvtColor(stream.array,cv2.COLOR_BGR2GRAY)
                     tmp=cv2.imread("./tmpl.jpg",0)
+                    tmp=cv2.resize(tmp,dsize=(100,100)
                     res=cv2.matchTemplate(img,tmp,cv2.TM_CCOEFF)
                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
                     println("=============".m)
