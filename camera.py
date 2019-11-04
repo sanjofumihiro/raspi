@@ -18,5 +18,5 @@ def refreshPic():
                 time.sleep(streamRate)
 thread_pic=threading.Thread(target=refreshPic)
 #thread_pic.start()
-image=cv2.imread(streamgetPath)
+#image=cv2.imread(streamgetPath)
 #cv2.imshow("image",image)
