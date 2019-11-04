@@ -31,5 +31,5 @@ def refreshPic():
                     print("\n")
                     print(max_loc)
                     print("\n")
-                    
+                    time.sleep(10)
 refreshPic()
