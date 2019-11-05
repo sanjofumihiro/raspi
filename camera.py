@@ -19,7 +19,7 @@ def refreshPic():
                     img = cv2.cvtColor(stream.array,cv2.COLOR_BGR2GRAY)
                     tmp=cv2.imread("./tmpl.jpg",0)
                     tmp=cv2.resize(tmp,dsize=(100,100))
-                    res=cv2.matchTemplate(img,tmp,cv2.TM_CCOEFF)
+                    res=cv2.matchTemplate(img,tmp,cv2.TM_CCOEFF_NORMED)
                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
                     output="min      "+str(min_val)+"      "+str(min_loc)+"max    "+str(max_val)+"      "+str(max_loc)
                     print(output)
