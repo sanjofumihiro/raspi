@@ -24,7 +24,7 @@ def refreshPic():
                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
                     output="min      "+str(min_val)+"      "+str(min_loc)+"max    "+str(max_val)+"      "+str(max_loc)
                     print(output)
-                    cv2.rectangle(res, (0,0), max_loc, (0, 0, 0), lineType=cv2.LINE_AA, shift=1)
+                    cv2.rectangle(img, (0,0), max_loc, (0, 0, 0), lineType=cv2.LINE_AA, shift=1)
                     cv2.imwrite("./"+str(random.randint(0,99999))+".jpg",res)
                     stream.seek(0)
                     stream.truncate()
