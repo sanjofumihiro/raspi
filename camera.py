@@ -4,6 +4,7 @@ import picamera
 import picamera.array
 import threading
 import matplotlib.pyplot as plt
+import random
 
 streamPath="./c.jpg"
 streamgetPath="./c.jpg"
